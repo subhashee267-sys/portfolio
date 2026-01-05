@@ -13,19 +13,9 @@ const Contact = () => {
         setStatus('sending');
 
         // Replace these with your actual Service ID, Template ID, and Public Key from EmailJS
-        const serviceID = 'YOUR_SERVICE_ID';
-        const templateID = 'YOUR_TEMPLATE_ID';
-        const publicKey = 'YOUR_PUBLIC_KEY';
-
-        // Simulating success for demonstration if keys are missing
-        if (serviceID === 'YOUR_SERVICE_ID') {
-            setTimeout(() => {
-                setStatus('success');
-                setTimeout(() => setStatus(''), 5000);
-                alert("This is a demo form. To make it functional, please add your EmailJS credentials in src/pages/Contact.jsx");
-            }, 1500);
-            return;
-        }
+        const serviceID = 'service_v1kcxhj';
+        const templateID = 'YOUR_TEMPLATE_ID'; // ⚠️ Please provide this (e.g., template_xxxxx)
+        const publicKey = 'YOUR_PUBLIC_KEY';   // ⚠️ Please provide this (e.g., user_xxxxx)
 
         emailjs.sendForm(serviceID, templateID, form.current, publicKey)
             .then((result) => {
@@ -35,6 +25,11 @@ const Contact = () => {
             }, (error) => {
                 setStatus('error');
                 console.log(error.text);
+                if (error.text.includes("The public key is required")) {
+                    alert("EmailJS Error: Missing Public Key. Please add it to src/pages/Contact.jsx");
+                } else {
+                    alert("EmailJS Error: " + error.text);
+                }
             });
     };
 
