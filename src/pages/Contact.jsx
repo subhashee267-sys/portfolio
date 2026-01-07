@@ -108,7 +108,7 @@ const Contact = () => {
                             <div>
                                 <input
                                     type="text"
-                                    name="user_name"
+                                    name="name"
                                     placeholder="Your Name"
                                     required
                                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-accent focus:bg-white/10 transition-colors"
@@ -117,7 +117,7 @@ const Contact = () => {
                             <div>
                                 <input
                                     type="email"
-                                    name="user_email"
+                                    name="email"
                                     placeholder="Your Email"
                                     required
                                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-accent focus:bg-white/10 transition-colors"
@@ -126,7 +126,7 @@ const Contact = () => {
                             <div>
                                 <input
                                     type="text"
-                                    name="subject"
+                                    name="title"
                                     placeholder="Subject"
                                     required
                                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-accent focus:bg-white/10 transition-colors"
